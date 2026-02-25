@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Production builds
+/build
+/dist
+
+# Misc
+.DS_Store
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Android
+.gradle/
+.idea/
+local.properties
+ant.properties
+gradlew.bat
+
+# APK files (optional - don't commit these)
+*.apk
+*.key
+*.jks
+
+# Server sensitivities
+quantum-ludo-release.jks
