@@ -65,6 +65,24 @@ const io = new Server(server, {
 // Expose socket instance to route handlers via `req.app.locals.io`
 app.locals.io = io;
 
+// --- serve client build when available (optional) -------------------------
+// If you build the React client and copy the `build` folder into the server
+// directory, Express will serve the UI automatically. This attempts to serve
+// the static files whenever the `build` directory exists (not only in
+// `NODE_ENV=production`) so hosting platforms that run different envs still
+// serve the client if present.
+const buildPath = path.resolve('./build');
+if (fs.existsSync(buildPath)) {
+  app.use(express.static(buildPath));
+  // serve index.html for any unknown route (client-side routing)
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(buildPath, 'index.html'));
+  });
+  console.log('📦 Serving static files from', buildPath);
+} else {
+  console.warn('⚠️ build directory not found, skipping static serve');
+}
+
 // ✅ REST API Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/tournaments", tournamentRoutes);
