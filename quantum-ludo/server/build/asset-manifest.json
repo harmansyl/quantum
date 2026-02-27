@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/static/css/main.ef5c622a.css",
+    "main.js": "/static/js/main.03f15270.js",
+    "static/media/green.png": "/static/media/green.e1be2318192f0dff613d.png",
+    "static/media/red.png": "/static/media/red.49e87d4625573250f60d.png",
+    "static/media/blue.png": "/static/media/blue.f486903966a9b57f6ba9.png",
+    "static/media/yellow.png": "/static/media/yellow.7608397df9e6a81b5574.png",
+    "static/media/bg.jpg": "/static/media/bg.1581eeb1bcc237cd771f.jpg",
+    "static/media/kill.mp3": "/static/media/kill.88804b13896d8df4fbf6.mp3",
+    "static/media/board.png": "/static/media/board.b5e8a871b3c927c8907b.png",
+    "static/media/profile.png": "/static/media/profile.56fe176e5c29451c5a75.png",
+    "static/media/win.mp3": "/static/media/win.efbd58b0af1193f2725e.mp3",
+    "static/media/game_over.mp3": "/static/media/game_over.f70154b6cda38501dd11.mp3",
+    "static/media/reach_home.mp3": "/static/media/reach_home.0337dd8fe523f7961345.mp3",
+    "static/media/game_start.mp3": "/static/media/game_start.eb6049e081c3bdaf68a0.mp3",
+    "static/media/step_move.mp3": "/static/media/step_move.fd4754e9be6e49a27c7d.mp3",
+    "static/media/dice.mp3": "/static/media/dice.6e65a853550d3bb710a1.mp3",
+    "index.html": "/index.html",
+    "main.ef5c622a.css.map": "/static/css/main.ef5c622a.css.map",
+    "main.03f15270.js.map": "/static/js/main.03f15270.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef5c622a.css",
+    "static/js/main.03f15270.js"
+  ]
+}
