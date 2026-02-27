@@ -5,9 +5,9 @@ services:
     region: oregon
     plan: free
     
-    # Build from the root, then cd into server
-    buildCommand: cd server && npm install
-    startCommand: cd server && node index.js
+    # Build from the root, then cd into quantum-ludo/server
+    buildCommand: cd quantum-ludo/server && npm install
+    startCommand: cd quantum-ludo/server && node index.js
     
     # Environment variables
     # NOTE: Add JWT_SECRET securely in Render dashboard (Settings > Environment)
