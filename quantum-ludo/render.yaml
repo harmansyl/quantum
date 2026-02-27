@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: quantum-ludo
+    runtime: node
+    region: oregon
+    plan: free
+    
+    # Build from the root, then cd into server
+    buildCommand: cd server && npm install
+    startCommand: cd server && node index.js
+    
+    # Environment variables (set these in Render dashboard or here)
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3001
+      - key: JWT_SECRET
+        value: /z3Ru5dJgTnrwt+qQe3pM/aklKusYIpKkgb0ps6VTcwnpyBtN8r3aHT4tvUCi7rz
+    
+    # Auto-deploy on push
+    autoDeploy: true
