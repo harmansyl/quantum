@@ -161,7 +161,8 @@ New APK: `quantum-ludo\client\android\app\build\outputs\apk\release\app-release.
 1. Install new APK
 2. **Login**
 3. **Profile icon → ⚙️ Server Settings**
-4. Enter: `https://your-project-xxxxx.onrender.com`
+4. Enter: `https://your-project-xxxxx.onrender.com` 
+   - or tap **🔍 Scan Network** if you’re on the same Wi‑Fi as the server; the app will look for the running process and fill the URL automatically.
 5. Tap **Save & Test**
 6. Should show ✅ **Connected!**
 
