@@ -11,7 +11,7 @@ import tournamentRoutes from "./routes/tournamentRoutes.js";
 import crypto from 'crypto';
 import fs from 'fs';
 import path from 'path';
-import supabase from "./supabaseClient.js";
+import { supabase } from "./supabaseClient.js";
 import { loadTournaments, saveTournaments } from './persistentStore.js';
 import { getPath, safeCells } from "./paths.js";
 
