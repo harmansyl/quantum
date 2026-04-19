@@ -1,6 +1,6 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
-import supabase from '../supabaseClient.js';
+import { supabase } from '../supabaseClient.js';
 import { loadTournaments, saveTournaments } from '../persistentStore.js';
 import crypto from 'crypto';
 import { scheduleTournamentReminder } from '../whatsappReminders.js';
