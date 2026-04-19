@@ -18,7 +18,20 @@ import { getPath, safeCells } from "./paths.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+
+// CORS: allow all origins in production, localhost in dev
+const isProduction = process.env.NODE_ENV === 'production';
+const corsOptions = {
+  origin: isProduction ? '*' : [
+    "http://localhost:3000",
+    "http://localhost:3002",
+    "http://127.0.0.1:3000",
+    "http://127.0.0.1:3002",
+  ],
+  credentials: !isProduction, // true for dev, false for prod (with * origin)
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Attach WhatsApp reminder routes (optional; requires TWILIO_* env vars)
@@ -44,22 +57,8 @@ if (supabase) {
 const server = http.createServer(app);
 const PORT = process.env.PORT || 3001;
 
-// CORS origins: localhost for dev, dynamically allow all for production
-const CORS_ORIGINS = process.env.NODE_ENV === 'production' 
-  ? '*'  // Allow all origins in production (or specify your domain)
-  : [
-      "http://localhost:3000",
-      "http://localhost:3002",
-      "http://127.0.0.1:3000",
-      "http://127.0.0.1:3002",
-    ];
-
 const io = new Server(server, {
-  cors: {
-    origin: CORS_ORIGINS,
-    methods: ["GET", "POST"],
-    credentials: process.env.NODE_ENV !== 'production', // true for dev, false for prod (with * origin)
-  },
+  cors: corsOptions, // Use same CORS config as Express
 });
 
 // Expose socket instance to route handlers via `req.app.locals.io`
