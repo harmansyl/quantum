@@ -9,13 +9,26 @@ import dotenv from "dotenv";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://quantum-ludo.onrender.com", // <-- Replace with your deployed frontend URL
+  ],
+  credentials: true
+}));
 app.use(express.json());
 
 const server = http.createServer(app);
 
 const io = new Server(server, {
-  cors: { origin: "http://localhost:3000", methods: ["GET", "POST"] },
+  cors: {
+    origin: [
+      "http://localhost:3000",
+      "https://quantum-ludo.onrender.com", // <-- Replace with your deployed frontend URL
+    ],
+    credentials: true,
+    methods: ["GET", "POST"]
+  }
 });
 
 const COLORS = ["blue", "red", "green", "yellow"];
