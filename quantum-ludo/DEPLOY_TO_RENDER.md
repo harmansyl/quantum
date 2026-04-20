@@ -96,6 +96,13 @@ JWT_SECRET = YourSecureRandomStringHereChangeThis
 
 (Don't add Supabase/Twilio unless you're using them)
 
+> **Serving the client:**
+> If you would like Render to host the React frontend as well as the API, build
+> the client before pushing to GitHub and copy its `build` folder into the
+> `server` directory. The server is already configured to serve static files
+> from `./build` when `NODE_ENV=production`, so browsing to the base URL will
+> return the web UI.
+
 ### 5. Deploy
 
 - Click **Deploy**

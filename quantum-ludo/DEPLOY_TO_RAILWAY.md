@@ -76,8 +76,13 @@ After pushing, verify on GitHub: https://github.com/USERNAME/quantum-ludo
 
 ### 4. Get Your Public URL
 - Click **Deployments** tab
-- Copy the **URL** (looks like: `https://quantum-ludo-xxxxx.railway.app`)
-- Test it in browser: `https://quantum-ludo-xxxxx.railway.app/health`
+   - Copy the **URL** (looks like: `https://quantum-ludo-xxxxx.railway.app`)
+   - Test it in browser: `https://quantum-ludo-xxxxx.railway.app/health`
+
+> **Note:** if you also want the React client served from the same endpoint,
+> build the client (`cd client && npm run build`) and copy the resulting
+> `build` directory into the `server` folder before pushing.  The server will
+> then serve the web UI automatically when `NODE_ENV=production`.
 
 ---
 
